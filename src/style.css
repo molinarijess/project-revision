@@ -1,3 +1,50 @@
-h1 {
-  color: aquamarine;
+body {
+  text-align: center;
+  margin: 120px 0;
+}
+
+h1,
+h2 {
+  font-family: Cerebri Sans, Helvetica, Arial, sans-serif;
+  font-size: 34px;
+  margin: 0;
+  line-height: 48px;
+}
+
+h2 {
+  color: #8064e9;
+  padding-bottom: 24px;
+}
+
+p {
+  font-family: PT Mono, monospace;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 18px 0;
+  padding-bottom: 30px;
+}
+
+span {
+  font-weight: 700;
+}
+
+button {
+  background: #8064e9;
+  padding: 16px 24px;
+  font-size: 16px;
+  border: 1px solid #8064e9;
+  border-radius: 25px;
+  line-height: 22px;
+  transition: all 200ms ease;
+  box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #5e41a7;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
