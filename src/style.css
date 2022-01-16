@@ -16,14 +16,6 @@ h2 {
   padding-bottom: 24px;
 }
 
-p {
-  font-family: PT Mono, monospace;
-  font-size: 18px;
-  line-height: 28px;
-  margin: 18px 0;
-  padding-bottom: 30px;
-}
-
 span {
   font-weight: 700;
 }
@@ -47,4 +39,12 @@ button:hover {
 a {
   color: #fff;
   text-decoration: none;
+}
+
+.explanation {
+  font-family: PT Mono, monospace;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 18px 0;
+  padding-bottom: 30px;
 }
