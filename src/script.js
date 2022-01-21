@@ -31,13 +31,25 @@ function showCurrentDate() {
   currentDate.innerHTML = `${weekDays[now.getDay()]}, ${now.getDate()} ${
     months[now.getMonth()]
   } ${now.getFullYear()}`;
-  currentTime.innerHTML = `${hour}:${minutes}`;
   if (hour < 10) {
-    currentTime.innerHTML = `0${hour}`;
+    hour = `0${hour}`;
   }
   if (minutes < 10) {
-    currentTime.innerHTML = `0${minutes}`;
+    minutes = `0${minutes}`;
   }
+  currentTime.innerHTML = `${hour}:${minutes}`;
   setTimeout(showCurrentDate, 1000);
 }
+
+let searchNewCity = document.querySelector("#search-new-city");
+searchNewCity.addEventListener("search", function (event) {
+  event.preventDefault();
+  let displaySearchInput = document.querySelector("#city");
+  let city = searchNewCity.value.toUpperCase();
+  displaySearchInput.innerHTML = `${city}`;
+  if (city === "") {
+    displaySearchInput.innerHTML = "LONDON";
+  }
+});
+
 showCurrentDate();

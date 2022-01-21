@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -14,12 +15,15 @@
         <div class="time-now" id="current-time"></div>
       </div>
       <div class="city-weather">
-        <h1 class="city">LONDON</h1>
-        <div class="temperature">0º <span class="temperature">C</span></div>
+        <h1 class="city" id="city">LONDON</h1>
+        <div class="temperature">0ºC</div>
       </div>
-      <form action="search">
-        <input type="search" placeholder="Change City" id="search-new-city" />
-      </form>
+      <input
+        type="search"
+        placeholder="Change City"
+        id="search-new-city"
+        class="search-button"
+      />
     </section>
     <script src="src/script.js"></script>
   </body>

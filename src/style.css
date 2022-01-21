@@ -11,7 +11,7 @@ h1 {
   margin: 0;
 }
 
-input {
+.search-button {
   background: rgb(222, 186, 157);
   border: 1px solid rgba(158, 119, 119, 0.781);
   border-radius: 50px;
@@ -28,7 +28,7 @@ input {
   color: rgb(111, 76, 91);
 }
 
-input:hover {
+.search-button:hover {
   cursor: pointer;
   background: rgb(245, 232, 199);
   color: rgb(111, 76, 91);
