@@ -3,10 +3,10 @@ let initialCity = "London";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${initialCity}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(function (response) {
-  let cityDisplay = document.querySelector("#city");
-  cityDisplay.innerHTML = response.data.name;
-  let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}ºC`;
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = `${Math.round(
+    response.data.main.temp
+  )}ºC`;
 });
 
 let searchNewCity = document.querySelector("#search-new-city");
@@ -23,8 +23,9 @@ searchNewCity.addEventListener("search", function (event) {
   }&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(function (response) {
     displaySearchInput.innerHTML = response.data.name;
-    let temperature = document.querySelector("#temperature");
-    temperature.innerHTML = `${Math.round(response.data.main.temp)}ºC`;
+    document.querySelector("#temperature").innerHTML = `${Math.round(
+      response.data.main.temp
+    )}ºC`;
   });
 });
 
@@ -53,21 +54,18 @@ function showCurrentDate() {
     "Nov",
     "Dec",
   ];
-  let currentDate = document.querySelector("#current-date");
-  let currentTime = document.querySelector("#current-time");
   let hour = now.getHours();
   let minutes = now.getMinutes();
-
-  currentDate.innerHTML = `${weekDays[now.getDay()]}, ${now.getDate()} ${
-    months[now.getMonth()]
-  } ${now.getFullYear()}`;
+  document.querySelector("#current-date").innerHTML = `${
+    weekDays[now.getDay()]
+  }, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+  document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
   if (hour < 10) {
     hour = `0${hour}`;
   }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  currentTime.innerHTML = `${hour}:${minutes}`;
   setTimeout(showCurrentDate, 1000);
 }
 
