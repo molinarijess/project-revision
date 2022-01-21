@@ -1,3 +1,23 @@
+let apiKey = "1f17ba351ee112a37d7633ae135f9016";
+let initialCity = "London";
+initialCity = initialCity.toUpperCase();
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${initialCity}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(function (response) {
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = `${Math.round(response.data.main.temp)}ºC`;
+});
+
+let searchNewCity = document.querySelector("#search-new-city");
+searchNewCity.addEventListener("search", function (event) {
+  event.preventDefault();
+  let displaySearchInput = document.querySelector("#city");
+  let city = searchNewCity.value.toUpperCase();
+  displaySearchInput.innerHTML = `${city}`;
+  if (city === "") {
+    displaySearchInput.innerHTML = "LONDON";
+  }
+});
+
 function showCurrentDate() {
   let now = new Date();
   var weekDays = [
@@ -40,21 +60,5 @@ function showCurrentDate() {
   currentTime.innerHTML = `${hour}:${minutes}`;
   setTimeout(showCurrentDate, 1000);
 }
-
-let searchNewCity = document.querySelector("#search-new-city");
-searchNewCity.addEventListener("search", function (event) {
-  event.preventDefault();
-  let displaySearchInput = document.querySelector("#city");
-  let city = searchNewCity.value.toUpperCase();
-  displaySearchInput.innerHTML = `${city}`;
-  if (city === "") {
-    displaySearchInput.innerHTML = "LONDON";
-  }
-});
-
-let apiUrl = "https://jsonplaceholder.typicode.com/comments";
-axios.get(apiUrl).then(function (response) {
-  console.log(response.data[0].email);
-});
 
 showCurrentDate();
