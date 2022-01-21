@@ -18,6 +18,14 @@ searchNewCity.addEventListener("search", function (event) {
   if (city === "") {
     displaySearchInput.innerHTML = initialCity;
   }
+  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${
+    city ? city : initialCity
+  }&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(function (response) {
+    displaySearchInput.innerHTML = response.data.name;
+    let temperature = document.querySelector("#temperature");
+    temperature.innerHTML = `${Math.round(response.data.main.temp)}ºC`;
+  });
 });
 
 function showCurrentDate() {
