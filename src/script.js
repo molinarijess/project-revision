@@ -1,8 +1,10 @@
 let apiKey = "1f17ba351ee112a37d7633ae135f9016";
 let initialCity = "London";
-initialCity = initialCity.toUpperCase();
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${initialCity}&appid=${apiKey}&units=metric`;
+let units = "metric";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${initialCity}&appid=${apiKey}&units=${units}`;
 axios.get(apiUrl).then(function (response) {
+  let cityDisplay = document.querySelector("#city");
+  cityDisplay.innerHTML = response.data.name;
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = `${Math.round(response.data.main.temp)}ºC`;
 });
@@ -11,10 +13,10 @@ let searchNewCity = document.querySelector("#search-new-city");
 searchNewCity.addEventListener("search", function (event) {
   event.preventDefault();
   let displaySearchInput = document.querySelector("#city");
-  let city = searchNewCity.value.toUpperCase();
+  let city = searchNewCity.value;
   displaySearchInput.innerHTML = `${city}`;
   if (city === "") {
-    displaySearchInput.innerHTML = "LONDON";
+    displaySearchInput.innerHTML = initialCity;
   }
 });
 
