@@ -7,6 +7,9 @@ axios.get(apiUrl).then(function (response) {
   document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
   )}ºC`;
+  document.querySelector(
+    "#weather-description"
+  ).innerHTML = `${response.data.weather[0].description}`;
 });
 
 let searchNewCity = document.querySelector("#search-new-city");
@@ -26,6 +29,9 @@ searchNewCity.addEventListener("search", function (event) {
     document.querySelector("#temperature").innerHTML = `${Math.round(
       response.data.main.temp
     )}ºC`;
+    document.querySelector(
+      "#weather-description"
+    ).innerHTML = `${response.data.weather[0].description}`;
   });
 });
 
