@@ -52,4 +52,9 @@ searchNewCity.addEventListener("search", function (event) {
   }
 });
 
+let apiUrl = "https://jsonplaceholder.typicode.com/comments";
+axios.get(apiUrl).then(function (response) {
+  console.log(response.data[0].email);
+});
+
 showCurrentDate();
