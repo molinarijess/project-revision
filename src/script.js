@@ -62,16 +62,16 @@ function showCurrentDate() {
   ];
   let hour = now.getHours();
   let minutes = now.getMinutes();
-  document.querySelector("#current-date").innerHTML = `${
-    weekDays[now.getDay()]
-  }, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
-  document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
   if (hour < 10) {
     hour = `0${hour}`;
   }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  document.querySelector("#current-date").innerHTML = `${
+    weekDays[now.getDay()]
+  }, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+  document.querySelector("#current-time").innerHTML = `${hour}:${minutes}`;
   setTimeout(showCurrentDate, 1000);
 }
 
