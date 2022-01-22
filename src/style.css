@@ -85,6 +85,8 @@ h1 {
   transition: 200ms ease-in-out;
 }
 
-.my-name:hover {
+.github:hover {
   color: rgb(222, 186, 157);
+  font-size: 15px;
+  font-weight: 300;
 }
